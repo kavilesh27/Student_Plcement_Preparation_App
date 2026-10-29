@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Centralized CSS Variables for Role-Based Themes */
+:root {
+  --primary-color: #2563EB;
+  --secondary-color: #DBEAFE;
+  --accent-color: #06B6D4;
+  --page-background: #F8FAFC;
+  --card-background: #FFFFFF;
+  --text-color: #0F172A;
+}
+
+[data-theme="student"] {
+  --primary-color: #2563EB;
+  --secondary-color: #DBEAFE;
+  --accent-color: #06B6D4;
+  --page-background: #F8FAFC;
+  --card-background: #FFFFFF;
+  --text-color: #0F172A;
+}
+
+[data-theme="staff"] {
+  --primary-color: #7C3AED;
+  --secondary-color: #EDE9FE;
+  --accent-color: #8B5CF6;
+  --page-background: #F8FAFC;
+  --card-background: #FFFFFF;
+  --text-color: #0F172A;
+}
+
+[data-theme="admin"] {
+  --primary-color: #059669;
+  --secondary-color: #D1FAE5;
+  --accent-color: #10B981;
+  --page-background: #F8FAFC;
+  --card-background: #FFFFFF;
+  --text-color: #0F172A;
+}
+
+@layer base {
+  body {
+    background-color: var(--page-background);
+    color: var(--text-color);
+    @apply antialiased font-sans;
+  }
+}
+
+/* Custom Scrollbar for Code Editor and Tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Subtle badge pulse */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.pulse-badge {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
